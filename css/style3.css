@@ -1,80 +1,78 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Set minimum height for full viewport */
-    background-color: #f0f0f0; /* Optional background color */
-    margin: 0;
+
+
+/* Reset */
+* {
+  margin: 0;
   padding: 0;
-  height: 100vh; /* Set full viewport height */
-  flex-direction: column;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: space-around;
-    width: 80%; /* Adjust container width as needed */
-    max-width: 700px; /* Optional max width for responsiveness */
-    z-index:1;
-  }
-  .background-container {
-    position: relative; /* Required for positioning the image and buttons */
-    flex: 1; /* Occupy remaining space after buttons */
-    display: flex; /* Allow positioning buttons within container */
-    justify-content: center; /* Center buttons horizontally */
-    align-items: center; /* Center buttons vertically */
-    z-index: 1;
-  }
-  
-  .background-image {
-    width: 100vw; /* Stretch image to cover viewport width */
-    height: 50vw; /* Stretch image to cover viewport height */
-    object-fit: cover; /* Ensure image fills viewport while maintaining aspect ratio */
-    position: absolute; /* Position image on top of other elements */
-    top:0; /* Align image to top of container */
-    left:-10; /* Align image to left of container */
-    z-index: -1; /* Set image behind other elements (buttons) */
-  }
-  
-  
-  .donation-button {
-    /* Base styles for all buttons */
-    background-color: #4CAF50; /* Green color */
-    color: white;
-    padding: 30px 60px; /* Increased padding for bigger buttons */
-    border: none;
-    border-radius: 10px; /* Larger border radius for softer look */
-    cursor: pointer;
-    font-size: 24px; /* Increased font size for larger text */
-    text-align: center; /* Center text within buttons */
-    margin: 15px; /* Increased margin for better spacing */
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
-    z-index:1;
-  }
-  
-  /* Individual button styles (optional) */
-  
-  .donation-button.food {
-    background-color: #ff9800; /* Orange for food */
-  }
-  
-  .donation-button.clothes {
-    background-color: #3f51b5; /* Blue for clothes */
-  }
-  
-  .donation-button.footwear {
-    background-color: #9ccc65; /* Green for footwear */
-  }
-  
-  .donation-button.fund {
-    background-color: #e74c3c; /* Red for fund */
-  }
-  
-  .donation-button:hover {
-    background-color: #3e8e41; /* Darker green on hover (default for all buttons) */
-  }
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Background */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) blur(2px);
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+.page-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+.page-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Button Grid */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Donation Card Buttons */
+.donation-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 50px 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.donation-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Category-specific colors */
+.food { background: linear-gradient(135deg, #facc15, #f97316); color: #fff; }
+.clothes { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff; }
+.footwear { background: linear-gradient(135deg, #10b981, #065f46); color: #fff; }
+.fund { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; }
+
+
   
